@@ -1,0 +1,47 @@
+{
+  "name": "gulp-es6-browserfy-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate to start with simple JS project with automation",
+  "main": "main.js",
+  "author": {
+    "name": "Usman",
+    "email": "mizmaar3@hotmail.com",
+    "url": "https://github.com/mizmaar3"
+  },
+  "scripts": {
+<<<<<<< Updated upstream
+    "build": "gulp build",
+    "start": "http-server ./ -p 9400 --cors"
+=======
+    "build": "gulp babelfy && gulp browserify && gulp css && gulp watch",
+    "start": "http-server ./ -p 9800 --cors"
+>>>>>>> Stashed changes
+  },
+  "devDependencies": {
+    "babel-preset-es2016": "^6.0.11",
+    "browser-sync": "^2.12.12",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "mimer": "^0.2.1",
+    "simple-mime": "^0.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "keywords": [
+    "gulp",
+    "boilerplate",
+    "ES6",
+    "ES2016",
+    "babel",
+    "Automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizmaar3/gulp-automation-boilerplate.git"
+  }
+}

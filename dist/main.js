@@ -1,0 +1,2 @@
+"use strict";var arraySets=function(){var e=[1,2,3],r=[4,5,6],s=[2,5,3,5];return{a:e,b:r,c:s}};module.exports=exports=arraySets;var _=require("lodash"),sets=require("../js/array-sets.jsx")(),mime=require("simple-mime")("unknown"),arrayUnion=function(){var e=document.createElement("div");e.innerHTML=_.union(sets.a,sets.b,sets.c),console.log("sets",sets),console.log(_.union(sets.a,sets.b,sets.c)),document.body.appendChild(e)},getMime=function(e){return mime(e)};top.arrayUnion=arrayUnion,top.getMime=getMime,module.exports=exports=arrayUnion;
+//# sourceMappingURL=main.js.map
