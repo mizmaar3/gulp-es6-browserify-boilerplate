@@ -9,13 +9,8 @@
     "url": "https://github.com/mizmaar3"
   },
   "scripts": {
-<<<<<<< Updated upstream
     "build": "gulp build",
-    "start": "http-server ./ -p 9400 --cors"
-=======
-    "build": "gulp babelfy && gulp browserify && gulp css && gulp watch",
     "start": "http-server ./ -p 9800 --cors"
->>>>>>> Stashed changes
   },
   "devDependencies": {
     "babel-preset-es2016": "^6.0.11",
@@ -38,7 +33,8 @@
     "ES6",
     "ES2016",
     "babel",
-    "Automation"
+    "Automation",
+    "Browserify"
   ],
   "repository": {
     "type": "git",
