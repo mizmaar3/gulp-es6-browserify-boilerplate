@@ -1,4 +1,4 @@
-# gulp-es6-rollup-boilerplate
+# gulp-es6-browserify-boilerplate
 
 > Project tested with node v 6.2.2
 
@@ -74,7 +74,7 @@ and goto http://127.0.0.1:9300 to test if code worked. You should get some text 
 
 #### The JS folder
 
-- So basically JS folder contains three files. The main file is `main.rollup.js` and ´math.js & person.js´ are utility functions used in main files. Both util files have two utility functions each exported as modules. The `main.rollup.js` only using one module from each utility file and `Rollup` bundler will only include those two functions in bundler.js which are used by `main.rollup.js` and will ignore rest.
+- So JS folder have three utility files and one main.js file which using utilities and showing some results in browser console. `Browserify` will do the magic for bundling. Everything which `Require` in main.js or in util files will be appended into bundle.js after building the project. `array-union.js` using `underscore.js` to union some sets while ´get-mime-type.js´ using npm package called `simple-mime` to get mimetype of a file. As utilities files have ES6 code it will be compiled by `babel js` after that `Browserify` will append all dependencied into single `bundle.js` file.. Yes even whole `underscore.js` can be found in ´bundle.js´ and of course whole `simple-mime` package and its dependencies as well.
 
 
 #### The LESS folder
