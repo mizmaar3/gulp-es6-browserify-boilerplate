@@ -1,2 +1,35 @@
-"use strict";var arraySets=function(){var e=[1,2,3],r=[4,5,6],n=[2,5,3,5];return{a:e,b:r,c:n}};module.exports=exports=arraySets;var _=require("lodash"),sets=require("../js/array-sets.jsx")(),mime=require("simple-mime")("unknown"),arrayUnion=function(){var e=document.createElement("div");e.innerHTML=_.union(sets.a,sets.b,sets.c),document.body.appendChild(e)},getMime=function(e){return mime(e)};top.arrayUnion=arrayUnion,top.getMime=getMime,module.exports=exports=arrayUnion;
+
+var arraySets = () => {
+  var a = [1, 2, 3];
+  var b = [4, 5, 6];
+  var c = [2, 5, 3, 5];
+  return { a: a, b: b, c: c };
+};
+
+module.exports = exports = arraySets;
+var _ = require('lodash');
+var sets = require('../js/array-sets.js')();
+
+var arrayUnion = () => {
+  return _.union(sets.a, sets.b, sets.c);
+};
+
+module.exports = exports = arrayUnion;
+var mime = require('simple-mime')('unknown');
+
+var getMime = file => {
+  return mime(file);
+};
+
+module.exports = exports = getMime;
+var arraySets = require('../js/array-sets')();
+var arrayUnion = require('../js/array-union')();
+var mimeType = require('../js/get-mime-type');
+
+console.log('Array Sets: ');
+console.table(arraySets);
+console.log('Union of array sets using _.union: ', arrayUnion);
+
+console.log('');
+console.log('Mime type of example.jpg using simple-mime is found: ', mimeType('example.jpg'));
 //# sourceMappingURL=main.js.map

@@ -8,6 +8,11 @@ var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var gulpif = require('gulp-if');
+var argv = require('yargs').argv;
+
+var isRelease = argv.release;
+
 
 
 /**
@@ -23,18 +28,21 @@ gulp.task('babelfy', function() {
       presets: ['es2016']
     }))
     .pipe(concat('main.js'))
-    .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'));
 });
 
-
+/**
+* Browserify everything
+* Putt everything which [require]
+* In bundle.js
+**/
 gulp.task('browserify', function() {
   return browserify('dist/main.js')
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    //.pipe(uglify())
+    //.pipe(uglify()) /*Did not worked */
     .pipe(gulp.dest('./dist/'));
 });
 
@@ -60,8 +68,10 @@ gulp.task('css', function() {
 **/
 gulp.task('watch', function() {
   gulp.watch('less/*.*', ['css']);
-  gulp.watch('js/*.*', ['babelfy']);
+  gulp.watch('js/*.*', ['babelfy', 'browserify']);
 });
 
 
-gulp.task('default', ['babelfy', 'browserify', 'css', 'watch']);
+gulp.task('default', ['babelfy', 'browserify', 'css']);
+gulp.task('build', ['babelfy', 'browserify', 'css', 'watch']);
+gulp.task('release', ['build --release']);
